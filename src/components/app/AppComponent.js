@@ -8,7 +8,7 @@ class AppComponent extends Component {
         return (
             <div className="App">
                 <AppBar />
-                {getMainTabs('YouTube')}
+                {getMainTabs()}
             </div>
         );
     }
