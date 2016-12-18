@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux'
+import loginButton from './loginButton'
 
-const gariReducers = combineReducers({
-
+const combinedReducer = combineReducers({
+    loginButton
 });
 
-export default gariReducers
+export default combinedReducer

@@ -1,7 +1,7 @@
-import React from 'react';
-import { Tabs, Tab } from 'material-ui/Tabs';
+import React from 'react'
+import { Tabs, Tab } from 'material-ui/Tabs'
 import { Link } from 'react-router'
-import FontIcon from 'material-ui/FontIcon';
+import FontIcon from 'material-ui/FontIcon'
 import routes from '../../data/routes'
 
 const getMainTabs = () => (
@@ -24,4 +24,4 @@ const getMainTabs = () => (
     </Tabs>
 );
 
-export default getMainTabs;
+export default getMainTabs

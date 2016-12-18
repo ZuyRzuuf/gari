@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import AppBar from './AppBar';
-import getMainTabs from './MainTabs';
-import '../../App.css';
+import React, { Component } from 'react'
+import AppBar from './AppBar'
+import getMainTabs from './MainTabs'
+import '../../App.css'
 
 class Layout extends Component {
     render() {
@@ -11,8 +11,8 @@ class Layout extends Component {
                 {getMainTabs()}
                 {this.props.children}
             </div>
-        );
+        )
     }
 }
 
-export default Layout;
+export default Layout
