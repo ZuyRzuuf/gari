@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react'
+import { connect } from 'react-redux'
 import MUIFlatButton from 'material-ui/FlatButton'
 import FontIcon from 'material-ui/FontIcon'
+import { login } from '../../services/google'
 
 class GoogleButton extends Component {
     constructor(props) {
@@ -87,7 +89,9 @@ class GoogleButton extends Component {
             <MUIFlatButton className={ this.props.class }
                            label={ this.props.buttonText }
                            icon={<FontIcon className="fa fa-google" />}
-                           onClick={ this.signIn.bind(this) } />
+                           //onClick={ this.signIn.bind(this) }
+                           onClick={ this.props.onButtonClick }
+            />
         );
     }
 }
@@ -112,4 +116,19 @@ GoogleButton.defaultProps = {
     scope:          'profile email',
 };
 
-export default GoogleButton
+const mapStateToProps = (state) => {
+    return {
+        // isLogged: state.loginButton.loggedIn
+    }
+};
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+    return {
+        onButtonClick: () => {
+        //     dispatch(googleLogin(ownProps.isLogged))
+            dispatch(login())
+        }
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(GoogleButton)

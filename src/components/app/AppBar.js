@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import MUIAppBar from 'material-ui/AppBar'
-// import MUIFlatButton from 'material-ui/FlatButton'
 import { googleLogin } from '../../services/index'
 import GoogleButton from './GoogleButton'
 import auth from '../../config/auth'
