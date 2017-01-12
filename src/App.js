@@ -3,6 +3,7 @@ import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import thunkMiddleware from 'redux-thunk'
 import injectTapEventPlugin from 'react-tap-event-plugin'
+import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import combinedReducer from './reducers/index'
 import Routes from './components/app/Routes'
@@ -17,8 +18,10 @@ class App extends Component {
     render() {
         let store = createStore(
             combinedReducer,
-            applyMiddleware (
-                thunkMiddleware // lets dispatch() functions
+            composeWithDevTools(
+                applyMiddleware (
+                    thunkMiddleware // lets dispatch() functions
+                )
             )
         );
 
