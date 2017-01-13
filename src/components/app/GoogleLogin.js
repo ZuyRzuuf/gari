@@ -61,13 +61,15 @@ class GoogleLogin extends Component {
 }
 
 GoogleLogin.propTypes = {
-    loginButtonText:  PropTypes.string,
-    logoutButtonText: PropTypes.string,
-    className:        PropTypes.string,
-    clientId:         PropTypes.string.isRequired,
-    cookiePolicy:     PropTypes.string,
-    isAuthenticated:  PropTypes.bool.isRequired,
-    scope:            PropTypes.string.isRequired,
+    className:           PropTypes.string,
+    clientId:            PropTypes.string.isRequired,
+    cookiePolicy:        PropTypes.string,
+    isAuthenticated:     PropTypes.bool.isRequired,
+    loginButtonText:     PropTypes.string,
+    logoutButtonText:    PropTypes.string,
+    onLoginButtonClick:  PropTypes.func.isRequired,
+    onLogoutButtonClick: PropTypes.func.isRequired,
+    scope:               PropTypes.string.isRequired,
 };
 
 GoogleLogin.defaultProps = {

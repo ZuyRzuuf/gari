@@ -6,10 +6,12 @@ import '../../App.css'
 
 class Layout extends Component {
     render() {
+        const { isLogged } = this.props;
+
         return (
             <div className="App ">
-                <AppBar isLogged={ this.props.isLogged } />
-                { this.props.isLogged ? getMainTabs() : null }
+                <AppBar isLogged={ isLogged } />
+                { isLogged ? getMainTabs() : null }
                 { this.props.children }
             </div>
         )
@@ -18,7 +20,7 @@ class Layout extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        isLogged: state.loginButton.loggedIn
+        isLogged: state.auth.isAuthenticated
     }
 };
 
