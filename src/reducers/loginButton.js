@@ -1,4 +1,4 @@
-import { TOGGLE_LOGIN_BUTTON } from '../actions/toggleLoginButton'
+import { TOGGLE_LOGIN_BUTTON } from '../actions/index'
 
 const loginButton = (state = { loggedIn: false }, action) => {
     switch (action.type) {

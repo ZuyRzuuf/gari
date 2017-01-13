@@ -1,5 +1,5 @@
 import { replace } from 'react-router-redux'
-import { toggleLoginButton } from '../actions/toggleLoginButton'
+import { toggleLoginButton } from '../actions/index'
 
 export function login() {
     console.log('service google login()');

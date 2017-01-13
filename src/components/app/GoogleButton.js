@@ -14,6 +14,7 @@ class GoogleButton extends Component {
     }
 
     componentDidMount () {
+        console.log('localStorage: ', localStorage);
         const { clientId, scope, cookiePolicy, autoLoad } = this.props;
 
         ((d, s, id, onload) => {
@@ -89,8 +90,8 @@ class GoogleButton extends Component {
             <MUIFlatButton className={ this.props.class }
                            label={ this.props.buttonText }
                            icon={<FontIcon className="fa fa-google" />}
-                           //onClick={ this.signIn.bind(this) }
-                           onClick={ this.props.onButtonClick }
+                           onClick={ this.signIn.bind(this) }
+                           //onClick={ this.props.onButtonClick }
             />
         );
     }
@@ -117,12 +118,15 @@ GoogleButton.defaultProps = {
 };
 
 const mapStateToProps = (state) => {
+    console.log('mapStateToProps state: ', state);
     return {
         // isLogged: state.loginButton.loggedIn
     }
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
+    console.log('mapStateToProps dispatch: ', dispatch);
+    console.log('mapStateToProps ownProps: ', ownProps);
     return {
         onButtonClick: () => {
         //     dispatch(googleLogin(ownProps.isLogged))

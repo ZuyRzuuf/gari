@@ -6,15 +6,15 @@ import GoogleButton from './GoogleButton'
 import auth from '../../config/auth'
 
 const responseGoogle = (googleUser) => {
-    console.log(googleUser)
+    console.log('loginResponse googleUser: ', googleUser)
 };
 
 const requestingGoogle = () => {
-    console.log('start authentication')
+    console.log('loginRequest start authentication')
 };
 
 const authFailed = (error) => {
-    console.log(error)
+    console.log('loginError error: ', error)
 };
 
 class AppBar extends Component {
