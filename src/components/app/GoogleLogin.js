@@ -30,25 +30,33 @@ class GoogleLogin extends Component {
     }
 
     render() {
-        const { className, isAuthenticated } = this.props;
+        const { className, isAuthenticated, isFetching } = this.props;
 
-        return(
-            <div>
-            { !isAuthenticated ?
+        if (!isAuthenticated && !isFetching) {
+            return (
                 <MUIFlatButton className={ className }
                                label={ this.props.loginButtonText }
                                icon={<FontIcon className="fa fa-google"/>}
                                onClick={ this.props.onLoginButtonClick }
                 />
-                :
+            )
+        }
+        else if (!isAuthenticated && isFetching) {
+            return (
+                <div>
+                    <FontIcon className="fa fa-spinner fa-spin"/>
+                </div>
+            )
+        }
+        else {
+            return (
                 <MUIFlatButton className={ className }
                                label={ this.props.logoutButtonText }
                                icon={<FontIcon className="fa fa-google"/>}
                                onClick={ this.props.onLogoutButtonClick }
                 />
-            }
-            </div>
-        );
+            )
+        }
     }
 }
 
