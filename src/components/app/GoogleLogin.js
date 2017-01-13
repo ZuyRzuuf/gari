@@ -30,17 +30,19 @@ class GoogleLogin extends Component {
     }
 
     render() {
+        const { className, isAuthenticated } = this.props;
+
         return(
             <div>
-            { !this.props.isAuthenticated ?
-                <MUIFlatButton className={ this.props.class }
-                               label={ this.props.buttonText }
+            { !isAuthenticated ?
+                <MUIFlatButton className={ className }
+                               label={ this.props.loginButtonText }
                                icon={<FontIcon className="fa fa-google"/>}
                                onClick={ this.props.onLoginButtonClick }
                 />
                 :
-                <MUIFlatButton className={ this.props.class }
-                               label="Wyloguj z aplikacji"
+                <MUIFlatButton className={ className }
+                               label={ this.props.logoutButtonText }
                                icon={<FontIcon className="fa fa-google"/>}
                                onClick={ this.props.onLogoutButtonClick }
                 />
@@ -51,18 +53,21 @@ class GoogleLogin extends Component {
 }
 
 GoogleLogin.propTypes = {
-    buttonText:     PropTypes.string,
-    className:      PropTypes.string,
-    clientId:       PropTypes.string.isRequired,
-    cookiePolicy:   PropTypes.string,
-    scope:          PropTypes.string.isRequired,
+    loginButtonText:  PropTypes.string,
+    logoutButtonText: PropTypes.string,
+    className:        PropTypes.string,
+    clientId:         PropTypes.string.isRequired,
+    cookiePolicy:     PropTypes.string,
+    isAuthenticated:  PropTypes.bool.isRequired,
+    scope:            PropTypes.string.isRequired,
 };
 
 GoogleLogin.defaultProps = {
-    buttonText:     'Logowanie do konta Google',
-    cookiePolicy:   'single_host_origin',
-    redirectUri:    'postmessage',
-    scope:          'profile email',
+    loginButtonText:  'Logowanie do konta Google',
+    logoutButtonText: 'Wyloguj z aplikacji',
+    cookiePolicy:     'single_host_origin',
+    redirectUri:      'postmessage',
+    scope:            'profile email',
 };
 
 const mapStateToProps = (state) => {

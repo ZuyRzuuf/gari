@@ -10,9 +10,8 @@ class AppBar extends Component {
             <MUIAppBar
                 title="Google API React Interface"
                 iconElementRight={ <GoogleButton clientId={ auth.google.clientId }
-                                                 class="google-login"
-                                                 scope={ auth.google.scope }
-                                                 buttonText=" Logowanie do konta Google" /> }
+                                                 className="google-login"
+                                                 scope={ auth.google.scope } /> }
                 showMenuIconButton={ false }
             />
         );
