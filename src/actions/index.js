@@ -3,7 +3,6 @@ export const GOOGLE_LOGIN_SUCCESS = 'GOOGLE_LOGIN_SUCCESS'
 export const GOOGLE_LOGIN_FAILURE = 'GOOGLE_LOGIN_FAILURE'
 export const GOOGLE_LOGOUT_REQUEST = 'GOOGLE_LOGOUT_REQUEST'
 export const GOOGLE_LOGOUT_SUCCESS = 'GOOGLE_LOGOUT_SUCCESS'
-export const TOGGLE_LOGIN_BUTTON = 'TOGGLE_LOGIN_BUTTON'
 
 export const loginRequest = () => {
     return {
@@ -11,7 +10,7 @@ export const loginRequest = () => {
         isFetching: true,
         isAuthenticated: false
     }
-}
+};
 
 export const loginResponse = (googleUser) => {
     return {
@@ -20,7 +19,7 @@ export const loginResponse = (googleUser) => {
         isAuthenticated: true,
         googleUser
     }
-}
+};
 
 export const loginError = (error) => {
     return {
@@ -29,7 +28,7 @@ export const loginError = (error) => {
         isAuthenticated: false,
         error
     }
-}
+};
 
 export const logoutRequest = () => {
     return {
@@ -37,7 +36,7 @@ export const logoutRequest = () => {
         isFetching: true,
         isAuthenticated: true
     }
-}
+};
 
 export const logoutResponse = () => {
     return {
@@ -45,11 +44,4 @@ export const logoutResponse = () => {
         isFetching: false,
         isAuthenticated: false
     }
-}
-
-export const toggleLoginButton = (state) => {
-    return {
-        type: TOGGLE_LOGIN_BUTTON,
-        isLogged: state
-    }
-}
+};

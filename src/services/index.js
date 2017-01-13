@@ -1,7 +1,4 @@
-import { replace } from 'react-router-redux'
 import * as actions from '../actions/index'
-
-
 
 export function signIn() {
     return dispatch => {
@@ -43,21 +40,4 @@ export function signOut() {
 
         dispatch(actions.logoutResponse());
     }
-}
-
-export function googleLogin(isLogged) {
-    console.log('service googleLogin isLogged: ', isLogged);
-    
-    return function (dispatch, getState) {
-
-        if (!isLogged) {
-            backToHome(dispatch);
-        }
-        dispatch(actions.toggleLoginButton(isLogged));
-    }
-}
-
-export function backToHome(dispatch) {
-    console.log('service backToHome');
-    dispatch(replace('/'))
 }

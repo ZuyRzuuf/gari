@@ -5,10 +5,6 @@ import getMainTabs from './MainTabs'
 import '../../App.css'
 
 class Layout extends Component {
-    constructor() {
-        super();
-    }
-
     render() {
         return (
             <div className="App ">
