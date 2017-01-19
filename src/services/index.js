@@ -1,3 +1,4 @@
+import { browserHistory } from 'react-router'
 import * as actions from '../actions/index'
 
 export function signIn() {
@@ -26,6 +27,7 @@ export function signIn() {
                 localStorage.setItem('id_token', authResponse.id_token);
 
                 dispatch(actions.loginResponse(response));
+                browserHistory.push('/calendar');
             }, error => {
                 dispatch(actions.loginError(error));
             });
@@ -39,5 +41,6 @@ export function signOut() {
         localStorage.removeItem('id_token');
 
         dispatch(actions.logoutResponse());
+        browserHistory.push('/');
     }
 }
