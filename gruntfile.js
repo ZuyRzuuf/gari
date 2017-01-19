@@ -21,11 +21,12 @@ module.exports = function (grunt) {
             target: {
                 files: {
                     'public/style.min.css': [
-                        'scss/vendor/font-awesome/font-awesome.min.css',
-                        'scss/vendor/datepicker/bootstrap-datetimepicker.css',
-                        'scss/vendor/datatables/jquery.dataTables.min.css',
-                        'scss/vendor/datatables/dataTables.bootstrap.min.css',
-                        'scss/vendor/owl-carousel/owl.carousel.css',
+                        'scss/vendor/bootstrap/css/bootstrap.min.css',
+                        // 'scss/vendor/font-awesome/font-awesome.min.css',
+                        // 'scss/vendor/datepicker/bootstrap-datetimepicker.css',
+                        // 'scss/vendor/datatables/jquery.dataTables.min.css',
+                        // 'scss/vendor/datatables/dataTables.bootstrap.min.css',
+                        // 'scss/vendor/owl-carousel/owl.carousel.css',
                         'scss/build/style.css'
                     ]
                 }
